@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles Galery</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="myStyles.css">
+
+    <!-- Icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+
+    <!-- JS -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script defer type="module" src="App.js"></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white d-flex justify-content-between border-bottom-1 border border-gray" id="myNav">
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="btn text-secondary border-0 my-2 rounded-circle mr-3 myButton-Menu" id="myButton-Menu">
+                    <i class="fa">&#xf0c9;</i>
+                </button>
+                <a class="navbar-brand text-danger" href="#">Memories</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link display-none-580" href="#"><i class="fa">&#xf0fe;</i> Add Image</a>
+                    </li>
+                </ul>
+                <button class="btn text-secondary border-0 my-2 my-sm-0 rounded-circle ml-4 myButton-form-search display-none-580" id="myButton-form-search" type="button"><i class="fa">&#xf002;</i></button>
+                <form class="form-inline bg-white my-lg-0 fixed-top myContainer-form-collapse d-none justify-content-center align-items-center" id="myContainer-form-collapse">
+                    <input class="form-control mr-sm-2 border-0 bg-light myForm mx-2" id="myForm-collapse" type="search" placeholder="Find Some Image" aria-label="Search">
+                    <!-- <button class="btn text-secondary border-0 my-2 my-sm-0 rounded-circle" type="submit"><i class="fa">&#xf002;</i></button> -->
+                </form>
+            </div>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 border-0 bg-light myForm ml-4" id="myForm" type="search" placeholder="Find Some Image" aria-label="Search">
+                    <!-- <button class="btn text-secondary border-0 my-2 my-sm-0 rounded-circle" type="submit"><i class="fa">&#xf002;</i></button> -->
+                </form>
+            </div>
+            <a class="navbar-brand" href="#">
+                <img class="rounded-circle myUser-picture" src="https://premiumaddons.b-cdn.net/wp-content/uploads/2018/01/beautiful-woman-smiles.jpg" width="30" height="30" alt="User Photo" loading="lazy">
+            </a>
+        </nav>
+        <div class="mySeraching-container display-none fixed-top" id="mySeraching-container">
+            <div class="container pt-5 opacity" id="myContent-searching">
+                <div class="row">
+                  <div class="col col-md-2 d-flex justify-content-center align-items-sm-start mb-5">
+                    <button type="button" class="btn btn-dark rounded-circle" id="myButton-back-searching"><i class="fa" style="font-size: inherit !important;">&#xf053;</i></button>
+                  </div>
+                  <div class="col-sm-9 mx-4 myContent-searching-text">
+                      <div class="text-dark">
+                        <h1 class="display-4"><a class="text-dark text-decoration-none" href="#">Hello, world!</a></h1>
+                        <p class="lead"><span class="text-danger">Description : </span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                      </div>
+                      <div class="text-dark">
+                        <h1 class="display-4"><a class="text-dark text-decoration-none" href="#">Hello, world!</a></h1>
+                        <p class="lead"><span class="text-danger">Description : </span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                      </div>
+                      <div class="text-dark">
+                        <h1 class="display-4"><a class="text-dark text-decoration-none" href="#">Hello, world!</a></h1>
+                        <p class="lead"><span class="text-danger">Description : </span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                      </div>
+                      <div class="text-dark">
+                        <h1 class="display-4"><a class="text-dark text-decoration-none" href="#">Hello, world!</a></h1>
+                        <p class="lead"><span class="text-danger">Description : </span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                      </div>
+                      <div class="text-dark">
+                        <h1 class="display-4"><a class="text-dark text-decoration-none" href="#">Hello, world!</a></h1>
+                        <p class="lead"><span class="text-danger">Description : </span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container-fluid main">
+        <div class="row">
+            <div class="col-sm-2 aside bg-white" id="aside-container">
+                <aside class="pt-4">
+                    <ul class="list-group">
+                        <!-- <span class="font-weight-light display-none-1242">See Photos</span> -->
+                        <button type="button" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rounded m-1 border-0 myButton-aside">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf03e;</i><span class="display-none-1242px">Photos</span></span>
+                            <span class="badge badge-danger badge-pill display-none-1242px">14</span>
+                        </button>
+                        <!-- <span class="font-weight-light display-none-1242">Photos Interaction</span> -->
+                        <button type="button" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rounded m-1 border-0 myButton-aside">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf044;</i><span class="display-none-1242px">Edit Photo</span></span>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rounded m-1 border-0 myButton-aside">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf205;</i><span class="display-none-1242px">Dark Mode</span></span>
+                        </button>
+                        <!-- <span class="font-weight-light display-none-1242">Views Format</span> -->
+                        <button type="button" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rounded m-1 border-0 myButton-aside">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf00a;</i><span class="display-none-1242px">Small Format</span></span>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rounded m-1 border-0 myButton-aside">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf009;</i><span class="display-none-1242px">Medium Format</span></span>
+                        </button>
+                        <a class="list-group-item list-group-item-action align-items-center justify-content-between rounded m-1 border-0 myButton-aside display-flex-580" href="#">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf0fe;</i><span class="display-none-1242px">Add Image</span></span>
+                        </a>
+                        <button class="list-group-item list-group-item-action align-items-center justify-content-between rounded m-1 border-0 myButton-aside display-flex-580" id="myButton-form-search-responsive" type="button">
+                            <span class="d-flex align-items-center"><i class="fa mr-3 display-none-icon-aside">&#xf002;</i><span class="display-none-1242px">Search</span></span>
+                        </button>
+                    </ul>
+                </aside>
+            </div>
+            <div class="col-sm-10" id="main-container">
+                <div style="background: transparent; height: 100vh;">
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                    <h1>hola</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
