@@ -9,7 +9,10 @@ import
 export class StylesResponsive {
     constructor(){
         this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive() 
-        window.onresize = () => this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive()
+        window.onresize = () => {
+            this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive()
+            this.checkReposiveValue580() ?  this.changeGirdToResponsive580().bind(this) : this.changeGirdToNoResponsive580().bind(this)
+        }
         asideContainer.onmouseover = () => this.myOnMouseOver()
         asideContainer.onmouseout = () => this.myOnMouseOver()
         myButtonMenu.onclick = () => this.showAside()
@@ -25,23 +28,47 @@ export class StylesResponsive {
         asideContainer.classList.remove("col-sm-2")
         asideContainer.classList.add("width-aside-reponsive")
         mainContainer.classList.remove("col-sm-10")
+        mainContainer.classList.remove("offset-sm-2")
         mainContainer.classList.add("col")
     }
     changeGirdToNoResponsive(){
         asideContainer.classList.remove("width-aside-reponsive")
         asideContainer.classList.add("col-sm-2")
         mainContainer.classList.remove("col")
+        mainContainer.classList.add("offset-sm-2")
         mainContainer.classList.add("col-sm-10")
     }
     myOnMouseOver(){
         let value580 = window.matchMedia("(max-width: 580px)").matches
-        console.log(value580)
         if(this.checkReposiveValue() && !value580 ){
-            console.log("hola")
             asideContainer.classList.toggle("width-aside-reponsive")
         }
     }
+    changeGirdToResponsive580(){
+        asideContainer.classList.remove("aside-in")
+        asideContainer.classList.add("aside-out")
+        asideContainer.classList.add("display-none") 
+        asideContainer.classList.add("opacity")
+    }
+    changeGirdToNoResponsive580(){
+        asideContainer.classList.remove("aside-in")
+        asideContainer.classList.remove("aside-out")
+        asideContainer.classList.remove("display-none") 
+        asideContainer.classList.remove("opacity")
+    }
     showAside(){
-        asideContainer.classList.toggle("open-aside");
+        if(asideContainer.classList.contains("aside-in")){
+            asideContainer.classList.remove("aside-in")
+            asideContainer.classList.add("aside-out")
+            setTimeout(() => {
+                asideContainer.classList.add("display-none"), 
+                asideContainer.classList.add("opacity")
+            },500)
+        } else {
+            asideContainer.classList.add("aside-in")
+            asideContainer.classList.remove("aside-out")
+            setTimeout(() => asideContainer.classList.remove("display-none"),100)
+            setTimeout(() => asideContainer.classList.remove("opacity"),150)
+        }
     }
 }
