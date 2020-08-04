@@ -3,7 +3,6 @@ import
     asideContainer,
     mainContainer,
     myButtonMenu,
-    myIconBackButton
 } from "./Variables.js"
 
 export class StylesResponsive {
@@ -11,7 +10,7 @@ export class StylesResponsive {
         this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive() 
         window.onresize = () => {
             this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive()
-            this.checkReposiveValue580() ?  this.changeGirdToResponsive580().bind(this) : this.changeGirdToNoResponsive580().bind(this)
+            this.checkReposiveValue580() ?  this.changeGirdToResponsive580() : this.changeGirdToNoResponsive580()
         }
         asideContainer.onmouseover = () => this.myOnMouseOver()
         asideContainer.onmouseout = () => this.myOnMouseOver()
@@ -39,7 +38,7 @@ export class StylesResponsive {
         mainContainer.classList.add("col-sm-10")
     }
     myOnMouseOver(){
-        let value580 = window.matchMedia("(max-width: 580px)").matches
+        let value580 = window.matchMedia("(max-width: 580px)").matches; 
         if(this.checkReposiveValue() && !value580 ){
             asideContainer.classList.toggle("width-aside-reponsive")
         }
@@ -65,8 +64,8 @@ export class StylesResponsive {
                 asideContainer.classList.add("opacity")
             },500)
         } else {
-            asideContainer.classList.add("aside-in")
             asideContainer.classList.remove("aside-out")
+            asideContainer.classList.add("aside-in")
             setTimeout(() => asideContainer.classList.remove("display-none"),100)
             setTimeout(() => asideContainer.classList.remove("opacity"),150)
         }

@@ -13,5 +13,8 @@ export const myButtonMenu = document.getElementById("myButton-Menu")
 // Aside
 export const asideContainer = document.getElementById("aside-container")
 export const myButtonFormSearchResponsive = document.getElementById("myButton-form-search-responsive")
+export const displayNone1242px = document.getElementsByClassName("display-none-1242px")
 // Main
 export const mainContainer = document.getElementById("main-container")
+export const containerCard = document.getElementById("container-card")
+export const cards = document.getElementsByClassName("card")

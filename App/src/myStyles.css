@@ -95,10 +95,6 @@ i{
     from{opacity: 0;}
     to{opacity: 1;}
 }
-/* Main */
-.main{
-    margin-top: 61.200px;
-}
  /* Aside */
 .myButton-aside:focus{
     outline: none;
@@ -117,12 +113,23 @@ i{
     display: none;
 }
 .aside{
+    overflow: hidden;
     transition: width .2s ease-in-out;
     padding: 15px;
     position: fixed;
     top: 61.200px;
     z-index: 1;
     height: calc(100vh - 61.200px);
+}
+/* Main */
+.main{
+    margin-top: 61.200px;
+}
+.card-deck{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    /* grid-gap: 10px; */
+    justify-content: center;
 }
 
  /* Media Queries */
@@ -131,14 +138,25 @@ i{
         margin-left: 60px;
     }
     .display-none-1242px{
-        display: none;
+        position: absolute;
+        margin-left: 35px;
+        opacity: 0;
+        transition: opacity .4s;
     }
     .aside:hover {
         width: 30vw;
     }
     .aside:hover .display-none-1242px{
-        display: block;
+        position: absolute;
+        margin-left: 35px;
+        opacity: 1;
     }
+    .myNumber{
+        right: 0;
+    }
+    /* .aside:hover .myNumber{
+        right: 0;
+    } */
 }
 @media screen and (max-width: 991px) {
     .myButton-form-search{
