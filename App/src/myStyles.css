@@ -190,19 +190,6 @@ i{
         display: block;
         opacity: 1;
     }
-    /* .aside .display-none-1242px,
-    .aside .display-none-icon-aside{
-        opacity: 0;
-        display: block;
-        transition: opacity .2s ease-in-out;
-    }
-    .open-aside .display-none-1242px,
-    .open-aside .display-none-icon-aside,
-    .aside:hover .display-none-1242px,
-    .aside:hover .display-none-icon-aside{
-        opacity: 1;
-        display: block;
-    } */
     .display-none-580{
         display: none;
     }

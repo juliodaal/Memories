@@ -1,16 +1,14 @@
-import { containerCard, cards } from "./Variables.js"
-
 export class Cards {
     constructor(){
-        console.log(Math.floor(containerCard.offsetWidth / 300))
-        window.onresize = () => {alert("hola")}
-        this.masonryLayout(containerCard,cards, Math.floor(containerCard.offsetWidth / 300))
+    
     }
-    masonryLayout(containerElement,itensElements, columns){
+
+    masonryLayout(containerElement,itensElements,columns){
+        const isColumns = document.getElementsByClassName("mansonry-column");
         
-        console.log("Math.floor(containerCard.offsetWidth / 300)")
         let columnsElements = [];
         let columnsItems = [];
+        let arrIsColumns = Array.from(isColumns)
 
         for(let i = 1;i <= columns; i++){
             let column = document.createElement("div")
@@ -18,7 +16,6 @@ export class Cards {
             containerElement.appendChild(column)
             columnsElements.push(column)
         }
-
         for(let n = 0; n < columns; n++){
             columnsItems.push([])
         }
@@ -33,6 +30,10 @@ export class Cards {
             for(let m = 0; m < Math.ceil(itensElements.length / columns); m++){
                 columnsElements[n].appendChild(columnsItems[n][m])
             }    
+        }
+        for(let i = 0;i < Math.abs(isColumns.length - columns); i++){
+            let x =  isColumns[i];
+            setTimeout(() => x.parentNode.removeChild(x),50)
         }
     }
 }

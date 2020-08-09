@@ -17,4 +17,4 @@ export const displayNone1242px = document.getElementsByClassName("display-none-1
 // Main
 export const mainContainer = document.getElementById("main-container")
 export const containerCard = document.getElementById("container-card")
-export const cards = document.getElementsByClassName("card")
+export const allcards = document.getElementsByClassName("card")

@@ -3,34 +3,45 @@ import
     asideContainer,
     mainContainer,
     myButtonMenu,
+    allcards,
+    containerCard
 } from "./Variables.js"
+import { Cards } from "./Cards.js"
 
 export class StylesResponsive {
     constructor(){
-        this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive() 
+        let cards = new Cards()
+        let id;
+        cards.masonryLayout(containerCard,allcards, Math.floor(containerCard.offsetWidth / 300))
+        this.checkReposiveValue1242() ?  this.changeGirdToResponsive1242() : this.changeGirdToNoResponsive1242()
+        this.checkReposiveValue580() ?  this.changeGirdToResponsive580() : this.changeGirdToNoResponsive580()
         window.onresize = () => {
-            this.checkReposiveValue() ?  this.changeGirdToResponsive() : this.changeGirdToNoResponsive()
+            clearTimeout(id)
+            id = setTimeout(() => this.mansonry(cards),100)
+            this.checkReposiveValue1242() ?  this.changeGirdToResponsive1242() : this.changeGirdToNoResponsive1242()
             this.checkReposiveValue580() ?  this.changeGirdToResponsive580() : this.changeGirdToNoResponsive580()
         }
         asideContainer.onmouseover = () => this.myOnMouseOver()
         asideContainer.onmouseout = () => this.myOnMouseOver()
         myButtonMenu.onclick = () => this.showAside()
     }
-    // Methods
-    checkReposiveValue(){
+    mansonry(cards){
+        cards.masonryLayout(containerCard,allcards, Math.floor(containerCard.offsetWidth / 300))
+    }
+    checkReposiveValue1242(){
         return window.matchMedia("(max-width: 1242px)").matches
     }
     checkReposiveValue580(){
         return window.matchMedia("(max-width: 580px)").matches
     }
-    changeGirdToResponsive(){
+    changeGirdToResponsive1242(){
         asideContainer.classList.remove("col-sm-2")
         asideContainer.classList.add("width-aside-reponsive")
         mainContainer.classList.remove("col-sm-10")
         mainContainer.classList.remove("offset-sm-2")
         mainContainer.classList.add("col")
     }
-    changeGirdToNoResponsive(){
+    changeGirdToNoResponsive1242(){
         asideContainer.classList.remove("width-aside-reponsive")
         asideContainer.classList.add("col-sm-2")
         mainContainer.classList.remove("col")
@@ -39,7 +50,7 @@ export class StylesResponsive {
     }
     myOnMouseOver(){
         let value580 = window.matchMedia("(max-width: 580px)").matches; 
-        if(this.checkReposiveValue() && !value580 ){
+        if(this.checkReposiveValue1242() && !value580 ){
             asideContainer.classList.toggle("width-aside-reponsive")
         }
     }
